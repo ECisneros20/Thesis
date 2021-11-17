@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<robot name="Thesis" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <gazebo reference="ruedatraseraizquierda">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="ruedafrentederecha">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="ruedafrenteizquierda">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="ruedatraseraderecha">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <robotNamespace>/thesis</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+  
+  <gazebo>
+    <plugin name='skid_steer_drive' filename='libgazebo_ros_skid_steer_drive.so'>
+      <updateRate>100</updateRate>
+      <leftFrontJoint>cuerpo__ruedafrenteizquierda</leftFrontJoint>
+      <rightFrontJoint>cuerpo__ruedafrentederecha</rightFrontJoint>
+      <leftRearJoint>cuerpo__ruedatraseraizquierda</leftRearJoint>
+      <rightRearJoint>cuerpo__ruedatraseraderecha</rightRearJoint>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+      <wheelSeparation>0.60</wheelSeparation>
+      <wheelDiameter>0.23</wheelDiameter>
+      <torque>40</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <broadcastTF>true</broadcastTF>
+    </plugin>
+  </gazebo>
+
+</robot>

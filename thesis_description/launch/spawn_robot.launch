@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- Gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find thesis_gazebo)/worlds/thesis.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Robot model -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find thesis_description)/urdf/thesis.xacro'" />
+
+  <!-- Spawn the robot model -->
+  <node name="movil" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model thesis -z 0.2" />
+  
+  <!-- Load controllers -->
+  <rosparam file="$(find thesis_description)/config/joints.yaml" command="load" />
+
+  <!-- Controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/thesis"
+        args="joint_state_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn ="false" output="screen" >
+    <remap from="/joint_states" to="/thesis/joint_states" />
+  </node>
+
+  <!-- Visualization of the robot using Rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find thesis_description)/rviz/thesis.rviz"/>
+
+  <!-- TF Transform Broadcaster -->
+  <node name="thesis_tf_broadcaster" pkg="thesis_gazebo" type="thesis_tf_broadcaster.py" />
+
+</launch>
