@@ -33,6 +33,6 @@
   <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find thesis_description)/rviz/thesis.rviz"/>
 
   <!-- TF Transform Broadcaster -->
-  <node name="thesis_tf_broadcaster" pkg="thesis_gazebo" type="thesis_tf_broadcaster.py" />
+  <node pkg="thesis_gazebo" type="thesis_tf_broadcaster.py" name="thesis_tf_broadcaster"/>
 
 </launch>
