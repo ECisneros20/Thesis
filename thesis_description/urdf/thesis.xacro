@@ -18,16 +18,20 @@
     <color rgba="0 0 1 1"/>
   </material>
 
+  <material name="orange">
+    <color rgba="0.949 0.361 0.098 1"/>
+  </material>
+
   <!-- BGN - Robot description -->
   <m_link_mesh name="base_link"
               origin_rpy="1.5807 0 1.5807" origin_xyz="0 0 0.03"
-              mass="5.0"
-              ixx="1.3235" ixy="0" ixz="0"
-              iyy="1.3235" iyz="0"
-              izz="0.9655"
-              material="white"
+              mass="26.28"
+              ixx="0.8837" ixy="0" ixz="0"
+              iyy="2.6409" iyz="0"
+              izz="3.0534"
+              material="orange"
               meshfile="package://thesis_description/meshes/base.stl"
-              meshscale="0.001 0.001 0.001" />
+              meshscale="0.01 0.01 0.01" /> <!--SOLO FALTA ORIGIN_XYZ-->
 
   <joint name="cuerpo__ruedafrentederecha" type="continuous">
       <parent link="base_link"/>
@@ -37,14 +41,14 @@
   </joint>
 
   <m_link_mesh name="ruedafrentederecha"
-              origin_rpy="1.5807 0 3.1416" origin_xyz="0 0 0"
-              mass="2"
+              origin_rpy="1.5708 0 4.7124" origin_xyz="0 0 0"
+              mass="13.43"
               ixx="0.132" ixy="0" ixz="0"
               iyy="0.132" iyz="0"
               izz="0.097"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.0009 0.0009 0.0009" />
+              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
 
   <joint name="cuerpo__ruedatraseraderecha" type="continuous">
       <parent link="base_link"/>
@@ -54,14 +58,14 @@
   </joint>
 
   <m_link_mesh name="ruedatraseraderecha"
-              origin_rpy="1.5807 0 3.1416" origin_xyz="0 0 0"
-              mass="2"
+              origin_rpy="1.5708 0 4.7124" origin_xyz="0 0 0"
+              mass="13.43"
               ixx="0.132" ixy="0" ixz="0"
               iyy="0.132" iyz="0"
               izz="0.097"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.0009 0.0009 0.0009" />
+              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
 
   <joint name="cuerpo__ruedafrenteizquierda" type="continuous">
       <parent link="base_link"/>
@@ -71,14 +75,14 @@
   </joint>
 
   <m_link_mesh name="ruedafrenteizquierda"
-              origin_rpy="1.5807 0 3.1416" origin_xyz="0 0 0"
-              mass="2"
+              origin_rpy="1.5708 0 1.5708" origin_xyz="0 0 0"
+              mass="13.43"
               ixx="0.132" ixy="0" ixz="0"
               iyy="0.132" iyz="0"
               izz="0.097"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.0009 0.0009 0.0009" />
+              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
 
   <joint name="cuerpo__ruedatraseraizquierda" type="continuous">
       <parent link="base_link"/>
@@ -88,13 +92,13 @@
   </joint>
 
   <m_link_mesh name="ruedatraseraizquierda"
-              origin_rpy="1.5807 0 3.1416" origin_xyz="0 0 0"
-              mass="2"
+              origin_rpy="1.5708 0 1.5708" origin_xyz="0 0 0"
+              mass="13.43"
               ixx="0.132" ixy="0" ixz="0"
               iyy="0.132" iyz="0"
               izz="0.097"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.0009 0.0009 0.0009" />
+              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
 
 </robot>

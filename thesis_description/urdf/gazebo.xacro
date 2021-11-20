@@ -1,6 +1,10 @@
 <?xml version="1.0" ?>
 <robot name="Thesis" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
+  <gazebo reference="base_link">
+    <material>Gazebo/OrangeTransparent</material>
+  </gazebo>
+
   <gazebo reference="ruedatraseraizquierda">
     <mu1>0.5</mu1>
     <mu2>0.5</mu2>
@@ -64,9 +68,9 @@
       <covariance_x>0.0001</covariance_x>
       <covariance_y>0.0001</covariance_y>
       <covariance_yaw>0.01</covariance_yaw>
-      <wheelSeparation>0.60</wheelSeparation>
-      <wheelDiameter>0.23</wheelDiameter>
-      <torque>40</torque>
+      <wheelSeparation>0.60</wheelSeparation> <!--Por corregir-->
+      <wheelDiameter>0.32766</wheelDiameter> <!--CORREGIDO-->
+      <torque>40</torque> <!--Por corregir-->
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
