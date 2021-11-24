@@ -168,6 +168,16 @@
     </inertial>
   </link>
 
+  <joint name="depth_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="depth_link"/>
+    <child link="depth_optical_link"/>
+  </joint>
+
+  <link name="depth_optical_link"/>
+
+
+
   <!-- IMU -->
   <joint name="imu_joint" type="fixed">
     <axis xyz="0 1 0" />
