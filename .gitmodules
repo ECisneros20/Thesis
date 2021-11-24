@@ -1,0 +1,3 @@
+[submodule "gazebo_cave_world"]
+	path = gazebo_cave_world
+	url = https://github.com/LTU-RAI/gazebo_cave_world/tree/master
