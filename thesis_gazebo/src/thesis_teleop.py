@@ -8,22 +8,22 @@ if os.name == 'nt':
 else:
   import tty, termios
 
-HUSKY_MAX_LIN_VEL = 0.50
-HUSKY_MAX_ANG_VEL = 1.50
+THESIS_MAX_LIN_VEL = 0.50
+THESIS_MAX_ANG_VEL = 1.50
 
 LIN_VEL_STEP_SIZE = 0.02
 ANG_VEL_STEP_SIZE = 0.10
 
 msg = """
-Control Your Robotman!
+Control Your Robot!
 ---------------------------
 Moving around:
         w
    a    s    d
         x
 
-w/x : increase/decrease linear velocity (Robotman : ~ 0.50)
-a/d : increase/decrease angular velocity (Robotman : ~ 1.50)
+w/x : increase/decrease linear velocity (Robot : ~ 0.50)
+a/d : increase/decrease angular velocity (Robot : ~ 1.50)
 
 space key, s : force stop
 
@@ -73,19 +73,19 @@ def constrain(input, low, high):
 
 def checkLinearLimitVelocity(vel):
 
-    vel = constrain(vel, -HUSKY_MAX_LIN_VEL, HUSKY_MAX_LIN_VEL)
+    vel = constrain(vel, -THESIS_MAX_LIN_VEL, THESIS_MAX_LIN_VEL)
     return vel
 
 def checkAngularLimitVelocity(vel):
 
-    vel = constrain(vel, -HUSKY_MAX_ANG_VEL, HUSKY_MAX_ANG_VEL)
+    vel = constrain(vel, -THESIS_MAX_ANG_VEL, THESIS_MAX_ANG_VEL)
     return vel
 
 if __name__=="__main__":
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
 
-    rospy.init_node('robotman_teleop')
+    rospy.init_node('robot_teleop')
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 
     status = 0

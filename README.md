@@ -28,6 +28,10 @@ Then, spawn the robot:
 
 This second line will initiate RVIZ with the previous configuration. By default, LaserScan, PointCloud2 and IMU are not enabled in RVIZ in order to slow down any computer.
 
+Finally, to teleoperate the robot:
+
+	rosrun thesis_gazebo thesis_teleop.py
+
 ## Next steps
 
 1. Implement Hector SLAM with IMU information
