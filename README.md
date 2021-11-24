@@ -34,7 +34,7 @@ This second line will initiate RVIZ with the previous configuration. By default,
 
 2. Implement Global and Local planners
 
-3. Inclue FlexBE state machines: http://wiki.ros.org/flexbe/Tutorials/Using%20the%20Statemachine%20Editor
+3. Include FlexBE state machines: http://wiki.ros.org/flexbe/Tutorials/Using%20the%20Statemachine%20Editor
 
 ## License
 
