@@ -30,11 +30,11 @@ This second line will initiate RVIZ with the previous configuration. By default,
 
 ## Next steps
 
-###Implement Hector SLAM with IMU information
+1. Implement Hector SLAM with IMU information
 
-**Implement Global and Local planners
+2. Implement Global and Local planners
 
-(3)Inclue FlexBE state machines: http://wiki.ros.org/flexbe/Tutorials/Using%20the%20Statemachine%20Editor
+3. Inclue FlexBE state machines: http://wiki.ros.org/flexbe/Tutorials/Using%20the%20Statemachine%20Editor
 
 ## License
 
