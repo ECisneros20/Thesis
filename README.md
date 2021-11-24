@@ -27,6 +27,10 @@ Then, spawn the robot:
 
 This second line will initiate RVIZ with the previous configuration. By default, LaserScan, PointCloud2 and IMU are not enabled in RVIZ in order to slow down any computer.
 
+## License
+
+MIT License
+
 ## References
 
 [1] https://github.com/LTU-RAI/gazebo_cave_world/tree/master#readme
