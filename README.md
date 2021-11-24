@@ -1,7 +1,7 @@
 # Thesis
 
 ## Description
-It contains the simulations of the mobile robot developed in my thesis. It uses the world from [1].
+This repository contains the simulations of the mobile robot developed in my thesis. It uses the world from [1].
 
 ## Installation
 
@@ -25,7 +25,7 @@ Then, spawn the robot:
 
 	roslaunch thesis_description spawn_robot.launch
 
-This second line will initiate RVIZ with the previous configuration. By default, LaserScan, PointCloud2 and IMU are not working in RVIZ.
+This second line will initiate RVIZ with the previous configuration. By default, LaserScan, PointCloud2 and IMU are not enabled in RVIZ in order to slow down any computer.
 
 ## References
 
