@@ -4,9 +4,9 @@ import rospy
 
 if __name__ == '__main__':
 
-    x=0.21
-    y=0.30
-    z=-0.05
+    x=0.311
+    y=0.3455
+    z=0.1638
 
     rospy.init_node('thesis_tf_broadcaster')
     
@@ -32,3 +32,10 @@ if __name__ == '__main__':
             tf.transformations.quaternion_from_euler(0, 0, 0),
             rospy.Time.now(),"ruedatraseraizquierda","base_link")
 
+        transform.sendTransform((0.4090, 0.0, 0.4430),
+            tf.transformations.quaternion_from_euler(0, 0, 0),
+            rospy.Time.now(),"hokuyo_link","base_link")
+#z 0.371
+        transform.sendTransform((0.5, 0.0, 0.371),
+            tf.transformations.quaternion_from_euler(0, 0, 0),
+            rospy.Time.now(),"depth_link","base_link")

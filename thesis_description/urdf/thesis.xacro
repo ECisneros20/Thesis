@@ -18,87 +18,187 @@
     <color rgba="0 0 1 1"/>
   </material>
 
+  <material name="grey">
+    <color rgba="0.332 0.332 0.332 1"/>
+  </material>
+
   <material name="orange">
     <color rgba="0.949 0.361 0.098 1"/>
   </material>
 
   <!-- BGN - Robot description -->
   <m_link_mesh name="base_link"
-              origin_rpy="1.5807 0 1.5807" origin_xyz="0 0 0.03"
+              origin_rpy="1.5807 0 1.5807" origin_xyz="0 0 0.2355"
               mass="26.28"
               ixx="0.8837" ixy="0" ixz="0"
               iyy="2.6409" iyz="0"
               izz="3.0534"
               material="orange"
               meshfile="package://thesis_description/meshes/base.stl"
-              meshscale="0.01 0.01 0.01" /> <!--SOLO FALTA ORIGIN_XYZ-->
+              meshscale="0.010335 0.010335 0.010335" />
 
   <joint name="cuerpo__ruedafrentederecha" type="continuous">
       <parent link="base_link"/>
       <child link="ruedafrentederecha"/>
-      <origin xyz="0.21 -0.30 -0.05" rpy="0.0 0.0 0"/>
+      <origin xyz="0.311 -0.3455 0.1638" rpy="0.0 0.0 0"/>
       <axis xyz="0 1 0"/>
   </joint>
 
   <m_link_mesh name="ruedafrentederecha"
               origin_rpy="1.5708 0 4.7124" origin_xyz="0 0 0"
               mass="13.43"
-              ixx="0.132" ixy="0" ixz="0"
-              iyy="0.132" iyz="0"
-              izz="0.097"
+              ixx="0.1798" ixy="0" ixz="0"
+              iyy="0.1081" iyz="0"
+              izz="0.1798"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
+              meshscale="0.010335 0.010335 0.010335" />
 
   <joint name="cuerpo__ruedatraseraderecha" type="continuous">
       <parent link="base_link"/>
       <child link="ruedatraseraderecha"/>
-      <origin xyz="-0.20 -0.30 -0.05" rpy="0.0 0.0 0"/>
+      <origin xyz="-0.311 -0.3455 0.1638" rpy="0.0 0.0 0"/>
       <axis xyz="0 1 0"/>
   </joint>
 
   <m_link_mesh name="ruedatraseraderecha"
               origin_rpy="1.5708 0 4.7124" origin_xyz="0 0 0"
               mass="13.43"
-              ixx="0.132" ixy="0" ixz="0"
-              iyy="0.132" iyz="0"
-              izz="0.097"
+              ixx="0.1798" ixy="0" ixz="0"
+              iyy="0.1081" iyz="0"
+              izz="0.1798"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
+              meshscale="0.010335 0.010335 0.010335" />
 
   <joint name="cuerpo__ruedafrenteizquierda" type="continuous">
       <parent link="base_link"/>
       <child link="ruedafrenteizquierda"/>
-      <origin xyz="0.21 0.30 -0.05" rpy="0.0 0.0 0"/>
+      <origin xyz="0.311 0.3455 0.1638" rpy="0.0 0.0 0"/>
       <axis xyz="0 1 0"/>
   </joint>
 
   <m_link_mesh name="ruedafrenteizquierda"
               origin_rpy="1.5708 0 1.5708" origin_xyz="0 0 0"
               mass="13.43"
-              ixx="0.132" ixy="0" ixz="0"
-              iyy="0.132" iyz="0"
-              izz="0.097"
+              ixx="0.1798" ixy="0" ixz="0"
+              iyy="0.1081" iyz="0"
+              izz="0.1798"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
+              meshscale="0.010335 0.010335 0.010335" />
 
   <joint name="cuerpo__ruedatraseraizquierda" type="continuous">
       <parent link="base_link"/>
       <child link="ruedatraseraizquierda"/>
-      <origin xyz="-0.20 0.30 -0.05" rpy="0.0 0.0 0"/>
+      <origin xyz="-0.311 0.3455 0.1638" rpy="0.0 0.0 0"/>
       <axis xyz="0 1 0"/>
   </joint>
 
   <m_link_mesh name="ruedatraseraizquierda"
               origin_rpy="1.5708 0 1.5708" origin_xyz="0 0 0"
               mass="13.43"
-              ixx="0.132" ixy="0" ixz="0"
-              iyy="0.132" iyz="0"
-              izz="0.097"
+              ixx="0.1798" ixy="0" ixz="0"
+              iyy="0.1081" iyz="0"
+              izz="0.1798"
               material="black"
               meshfile="package://thesis_description/meshes/Rueda.stl"
-              meshscale="0.01 0.01 0.01" /> <!--CORREGIDO-->
+              meshscale="0.010335 0.010335 0.010335" />
+
+  <!-- Hokuyo LiDAR -->
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.4090 0 0.4430" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo_link"/>
+  </joint>
+
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/LiDAR_2D.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/LiDAR_2D.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+
+    <inertial>
+      <mass value="0.370" />
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>z siguiente es 0.371
+  </link>
+
+  <!-- Depth camera -->
+  <joint name="depth_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.5 0 0.371" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="depth_link"/>
+  </joint>
+
+  <link name="depth_link">
+  
+    <collision>
+      <origin xyz="0 0 0" rpy="-0.0326 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/Camara_estereo.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="-0.0326 0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/Camara_estereo.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="-0.0326 0 -1.5708"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <!-- IMU -->
+  <joint name="imu_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+  </joint>
+
+  <link name="imu_link">
+  
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/IMU.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://thesis_description/meshes/IMU.stl" scale="0.010335 0.010335 0.010335"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
 
 </robot>

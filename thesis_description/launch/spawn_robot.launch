@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <!-- Gazebo world -->
+  <!-- Gazebo world 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find thesis_gazebo)/worlds/thesis.world"/>
+    <arg name="world_name" value="$(find thesis_gazebo)/worlds/thesis.world"/>-
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
-  </include>
+  </include>-->
 
   <!-- Robot model -->
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find thesis_description)/urdf/thesis.xacro'" />
 
-  <!-- Spawn the robot model -->
-  <node name="movil" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model thesis -z 0.2" />
+  <!-- Spawn the robot model -x -68.0 -z 2.0 -z 0.3-->
+  <node name="movil" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model thesis -x -68.0 -z 2.0" />
   
   <!-- Load controllers -->
   <rosparam file="$(find thesis_description)/config/joints.yaml" command="load" />

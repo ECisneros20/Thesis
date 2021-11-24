@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="marsyard">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <shadows>true</shadows>
+    </scene>
+<!--
+    <include>
+      <uri>model://Edgar_Mine_Virtual_STIX</uri>
+    </include>-->
+<!--    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Edgar\Mine\Virtual\STIX</uri>
+    </include>-->
+<!--
+    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Edgar Mine Virtual STIX</uri>
+    </include>
+-->
+    <!-- Marsyard -->
+    <include>
+      <uri>model://marsyard_terrain</uri>
+    </include>
+  </world>
+</sdf>
